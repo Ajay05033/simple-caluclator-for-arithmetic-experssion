@@ -1,0 +1,291 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4ad66d;
+    --error-color: #f72585;
+    --warning-color: #f77f00;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.header-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+.compiler-box {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+.compiler-box:hover {
+    transform: translateY(-5px);
+}
+.input-section {
+    margin-bottom: 30px;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+.input-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+#expression {
+    flex: 1;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Fira Code', monospace;
+    transition: all 0.3s;
+}
+#expression:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+#compile-btn {
+    padding: 15px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#compile-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+#compile-btn:active {
+    transform: translateY(0);
+}
+.examples {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+.examples-title {
+    font-weight: 500;
+}
+.example {
+    padding: 5px 10px;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Fira Code', monospace;
+}
+.example:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.step {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+.step:hover {
+    transform: translateX(5px);
+}
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.step-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+.step h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin: 0;
+}
+.code {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-size: 0.95rem;
+    border: 1px solid #e9ecef;
+    margin-bottom: 15px;
+}
+.visualization {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+}
+.visualization h4 {
+    color: #495057;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.postfix-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.step-card {
+    background-color: white;
+    border-radius: 6px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-left: 3px solid var(--primary-color);
+}
+.step-header {
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+.stack-visual {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+.stack-item {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    width: fit-content;
+    font-family: 'Fira Code', monospace;
+    min-width: 60px;
+    text-align: center;
+}
+.top-item {
+    background-color: var(--success-color);
+    font-weight: bold;
+}
+.operation {
+    font-family: 'Fira Code', monospace;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin: 5px 0;
+}
+.result-step {
+    border-left-color: var(--success-color);
+}
+#result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--success-color);
+    padding: 20px;
+    text-align: center;
+}
+.error {
+    color: var(--error-color);
+    font-weight: bold;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+.dsa-info {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.dsa-tag {
+    background-color: #e9ecef;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+    .input-container {
+        flex-direction: column;
+    }
+    #expression {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #compile-btn {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .examples {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
