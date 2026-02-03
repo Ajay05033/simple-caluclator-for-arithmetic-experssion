@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Expression Compiler</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-calculator header-icon"></i>
+            <h1>Arithmetic Expression Compiler</h1>
+            <p class="subtitle">A visual demonstration of compilation steps using data structures</p>
+        </div>
+        <div class="compiler-box">
+            <div class="input-section">
+                <div class="input-container">
+                    <i class="fas fa-code input-icon"></i>
+                    <input type="text" id="expression" placeholder="Try: (3+5)*2-8/4">
+                    <button id="compile-btn">
+                        <i class="fas fa-play"></i> Compile
+                    </button>
+                </div>
+                <div class="examples">
+                    <span class="examples-title">Examples:</span>
+                    <span class="example" data-expr="3+5*2">3+5*2</span>
+                    <span class="example" data-expr="(10-4)/2">(10-4)/2</span>
+                    <span class="example" data-expr="2^3+1">2^3+1</span>
+                </div>
+            </div>
+            <div class="output-section">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-header">
+                            <i class="fas fa-keyboard step-icon"></i>
+                            <h3>1. Input Expression</h3>
+                        </div>
+                        <div id="input-expr" class="code"></div>
+                    </div>   
+                    <div class="step">
+                        <div class="step-header">
+                            <i class="fas fa-code step-icon"></i>
+                            <h3>2. Tokenized Expression</h3>
+                        </div>
+                        <div id="tokens" class="code"></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-header">
+                            <i class="fas fa-sort-amount-down step-icon"></i>
+                            <h3>3. Postfix Notation (RPN)</h3>
+                        </div>
+                        <div id="postfix" class="code"></div>
+                        <div class="visualization">
+                            <h4>Evaluation Steps:</h4>
+                            <div id="postfix-steps" class="postfix-steps"></div>
+                        </div>
+                    </div>                   
+                    <div class="step result-step">
+                        <div class="step-header">
+                            <i class="fas fa-calculator step-icon"></i>
+                            <h3>4. Final Result</h3>
+                        </div>
+                        <div id="result" class="code"></div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        <div class="footer">
+            <p>Data Structures & Algorithms Project - BTech Computer Science</p>
+            <p class="dsa-info">
+                <span class="dsa-tag">Stack</span>
+                <span class="dsa-tag">Shunting-yard</span>
+                <span class="dsa-tag">Postfix Evaluation</span>
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
